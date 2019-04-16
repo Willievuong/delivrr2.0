@@ -1,4 +1,4 @@
-from flask import FLASK 
+from flask import Flask
 from flask_sqlalchemy import SQLAlchemy 
 import os 
 
@@ -8,7 +8,7 @@ app.config.from_object(os.environ['APP_SETTING'])
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
-#from models import results 
+from models import users 
 
 @app.route('/')
 def hello():
@@ -18,4 +18,3 @@ def hello():
 if __name__ == '__main__':
   app.run()
 
-  
