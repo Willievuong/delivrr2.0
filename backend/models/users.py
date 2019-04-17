@@ -1,8 +1,7 @@
 import sys
-sys.path.insert(0, '../')
-
 from app import db
 from sqlalchemy.dialects.postgresql import JSON
+sys.path.insert(0, '../')
 
 class Users(db.Model):
   __tablename__ = 'users'
