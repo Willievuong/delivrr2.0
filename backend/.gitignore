@@ -1,0 +1,6 @@
+
+# Distribution and Packaging
+.Python
+env/
+bin/
+build/
