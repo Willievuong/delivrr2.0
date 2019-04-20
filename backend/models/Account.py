@@ -1,12 +1,7 @@
-import sys
-from app import db
-from sqlalchemy.dialects.postgresql import JSON
-sys.path.insert(0, '../')
+from Model import db
 
-class Users(db.Model):
-  __tablename__ = 'users'
-
-  id = db.Column(db.Integer, primary_key=True)
+class Account(db.Model):
+  fbId = db.Column(db.Integer)
   firstName = db.Column(db.String())
   lastName = db.Column(db.String())
   age = db.Column(db.Integer)
@@ -20,4 +15,3 @@ class Users(db.Model):
   #Query Method 
   def __repr__(self):
     return '<id {}>'.format(self.id)
-
