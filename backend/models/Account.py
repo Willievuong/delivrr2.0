@@ -1,17 +1,27 @@
-from Model import db
+from sqlalchemy import Column, Integer, String
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.dialects.postgresql import JSON
+# from app import db 
 
-class Account(db.Model):
-  fbId = db.Column(db.Integer)
-  firstName = db.Column(db.String())
-  lastName = db.Column(db.String())
-  age = db.Column(db.Integer)
+Base = declarative_base()
 
-  #Constructor Method
-  def __init__(self, firstName, lastName, age): 
-    self.firstName = firstName
-    self.lastName = lastName
-    self.age = age; 
+class Account(Base):
+    __tablename__ = 'account'
+    id = Column(Integer, primary_key=True)
+    fb_id = Column(Integer)
+    firstname = Column(String())
+    lastname = Column(String())
+    age = Column(Integer)
 
-  #Query Method 
-  def __repr__(self):
-    return '<id {}>'.format(self.id)
+    # Constructor Method
+    def __init__(self, id, firstName, lastName, age): 
+      self.id = id
+      self.firstname = firstName
+      self.lastname = lastName
+      self.age = age 
+
+    # Query Method 
+    def __repr__(self):
+      return '<id {}>'.format(self.id)
+
+# CREATE TABLE Account(id int, fb_id int, firstName varchar(255), lastName varchar(255), age int);

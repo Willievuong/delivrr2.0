@@ -1,11 +1,13 @@
 from models.Account import Account
 from app import app 
 
+
 user = Account(firstName="Will", lastName="Vuong", age="12")
+
 
 @app.route('/')
 def Hello():
-  return user
+    return user
   
 print(user.firstName)
     
