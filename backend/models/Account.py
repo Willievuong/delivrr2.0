@@ -4,7 +4,7 @@ from sqlalchemy.dialects.postgresql import JSON
 # from app import db 
 
 Base = declarative_base()
-
+  
 class Account(Base):
     __tablename__ = 'account'
     id = Column(Integer, primary_key=True)
